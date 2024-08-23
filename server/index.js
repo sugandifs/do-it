@@ -47,8 +47,6 @@ const verifyUser = (req, res, next) => {
   } else {
     jwt.verify(token, process.env.JWT_SECRET_KEY, (err, decoded) => {
       if (err) {
-        console.log("verify token: " + token);
-        console.log("verify secret key:" + process.env.JWT_SECRET_KEY);
         return res.status(401).json({ Error: "Incorrect token." });
       } else {
         req.email = decoded.email;
@@ -86,8 +84,6 @@ app.post("/login", (req, res) => {
             process.env.JWT_SECRET_KEY,
             { expiresIn: "1d" }
           );
-          console.log("secret key: " + process.env.JWT_SECRET_KEY); //debuggin
-          console.log("token: " + token); //debuggin
           res.cookie("token", token, {
             secure: process.env.NODE_ENV === "production",
             sameSite: "None",
