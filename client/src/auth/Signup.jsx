@@ -60,6 +60,10 @@ function Signup() {
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Create an account
           </h2>
+          <p className="text-sm text-gray-500 mt-5">
+            Please allow up to 50 seconds for the server to wake up after
+            pressing the 'Create account' button.
+          </p>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
